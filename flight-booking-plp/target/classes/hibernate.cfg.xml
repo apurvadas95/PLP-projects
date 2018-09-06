@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="com.demo.plp.entity.Person"/>
+		<mapping class="com.demo.plp.entity.Flights"/>
+		<mapping class="com.demo.plp.entity.Bookings"/>
+		<mapping class="com.demo.plp.entity.PersonDetails"/>
+
+	</session-factory>
+
+</hibernate-configuration>
+
+
+
