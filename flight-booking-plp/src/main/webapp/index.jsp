@@ -10,7 +10,7 @@
         <mytags:menu/>
     </div>
     <div class="container">
-        <h2>Flight Booking</h2>
+        <h2>Flight Booking!</h2>
         <mytags:footer/>
     </div>
 </body>
