@@ -1,0 +1,1 @@
+<span id="footer">spring-security-example by <a href="http://www.highwise.com">Highwise</a></span>
