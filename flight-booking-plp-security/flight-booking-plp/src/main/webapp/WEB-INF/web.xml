@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
+
+	<servlet>
+		<servlet-name>flight-booking-plp</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/flight-booking-plp-servlet.xml
+			/WEB-INF/persistence-context.xml
+			/WEB-INF/security-context.xml
+		</param-value>
+	</context-param>
+	<!--
+          - Loads the root application context of this web app at startup.
+          - The application context is then available via
+          - WebApplicationContextUtils.getWebApplicationContext(servletContext).
+-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet-mapping>
+		<servlet-name>flight-booking-plp</servlet-name>
+		<url-pattern>/</url-pattern>
+		<!-- url-pattern>*.htm</url-pattern>
+		<url-pattern>*.jsp</url-pattern -->
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+
+</web-app>
